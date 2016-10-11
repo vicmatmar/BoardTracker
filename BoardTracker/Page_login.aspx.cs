@@ -5,10 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Login : System.Web.UI.Page
+public partial class Page_login : System.Web.UI.Page
 {
+    string _user_name;
+    public string UserName { get { return _user_name; } }
+
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Page.PreviousPage != null) { }
 
     }
 
@@ -42,11 +46,14 @@ public partial class Login : System.Web.UI.Page
 
             if (q.Any())
             {
-                Response.Redirect("BoardEntry.aspx");
+                //Session["user_name"] = username;
+                //Response.Redirect("BoardEntry.aspx");
+                _user_name = DropDownList_userName.Text;
+                Server.Transfer("~/Page_boardEntry.aspx");
             }
             else
             {
-
+                Label_msg.Text = "Invalid user/pin combination";
             }
         }
     }
