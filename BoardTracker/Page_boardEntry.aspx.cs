@@ -18,11 +18,18 @@ public partial class Page_boardEntry : System.Web.UI.Page
             {
                 _user_name = page_login.UserName;
                 Label_username.Text = "You are logged in as: " + _user_name;
+                Textbox_serial.Focus();
             }
         }
-        else
+        else if(!IsPostBack)
         {
             Server.Transfer("~/Page_login.aspx");
         }
+    }
+
+    protected void Textbox_serial_TextChanged(object sender, EventArgs e)
+    {
+        Label1.Text = Textbox_serial.Text;
+        UpdatePanel1.Update();
     }
 }
