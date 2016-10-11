@@ -11,19 +11,23 @@ public partial class Page_boardEntry : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (PreviousPage != null)
+        if (!IsPostBack)
         {
-            Page_login page_login = (Page_login)PreviousPage;
-            if (page_login.UserName != null)
+
+            if (PreviousPage != null)
             {
-                _user_name = page_login.UserName;
-                Label_username.Text = "You are logged in as: " + _user_name;
-                Textbox_serial.Focus();
+                Page_login page_login = (Page_login)PreviousPage;
+                if (page_login.UserName != null)
+                {
+                    _user_name = page_login.UserName;
+                    Label_username.Text = "You are logged in as: " + _user_name;
+                    Textbox_serial.Focus();
+                }
             }
-        }
-        else if(!IsPostBack)
-        {
-            Server.Transfer("~/Page_login.aspx");
+            else
+            {
+                Server.Transfer("~/Page_login.aspx");
+            }
         }
     }
 
