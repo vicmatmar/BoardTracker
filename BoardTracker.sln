@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BoardTracker", "..\..\WebSites\BoardTracker\", "{DA94C946-7E7B-4EEC-9171-6FC2E8EB2E02}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_37339"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\WebSites\BoardTracker\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_37339\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_37339"
+		Release.AspNetCompiler.PhysicalPath = "..\..\WebSites\BoardTracker\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_37339\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "37339"
+		SlnRelativePath = "..\..\WebSites\BoardTracker\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA94C946-7E7B-4EEC-9171-6FC2E8EB2E02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA94C946-7E7B-4EEC-9171-6FC2E8EB2E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
