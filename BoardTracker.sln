@@ -3,35 +3,51 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BoardTracker", "BoardTracker", "{DA94C946-7E7B-4EEC-9171-6FC2E8EB2E02}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BoardTracker", "BoardTracker\", "{DA94C946-7E7B-4EEC-9171-6FC2E8EB2E02}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		ProjectReferences = "{2fffd086-bcca-4f15-9222-ad4b7a8a6f70}|BoardSerialNumber.dll;{78f23225-6c41-413a-959c-d01fb56883cd}|BoardSerialData.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_37339"
-		Debug.AspNetCompiler.PhysicalPath = "BoardTracker"
+		Debug.AspNetCompiler.PhysicalPath = "BoardTracker\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_37339\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_37339"
-		Release.AspNetCompiler.PhysicalPath = "BoardTracker"
+		Release.AspNetCompiler.PhysicalPath = "BoardTracker\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_37339\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "37339"
-		SlnRelativePath = "BoardTracker"
+		SlnRelativePath = "BoardTracker\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardSerialNumber", "..\..\Projects\BoardSerialNumber\BoardSerialNumber\BoardSerialNumber.csproj", "{2FFFD086-BCCA-4F15-9222-AD4B7A8A6F70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardSerialData", "..\..\Projects\BoardSerialData\BoardSerialData\BoardSerialData.csproj", "{78F23225-6C41-413A-959C-D01FB56883CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{DA94C946-7E7B-4EEC-9171-6FC2E8EB2E02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DA94C946-7E7B-4EEC-9171-6FC2E8EB2E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA94C946-7E7B-4EEC-9171-6FC2E8EB2E02}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA94C946-7E7B-4EEC-9171-6FC2E8EB2E02}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{2FFFD086-BCCA-4F15-9222-AD4B7A8A6F70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FFFD086-BCCA-4F15-9222-AD4B7A8A6F70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FFFD086-BCCA-4F15-9222-AD4B7A8A6F70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FFFD086-BCCA-4F15-9222-AD4B7A8A6F70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78F23225-6C41-413A-959C-D01FB56883CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78F23225-6C41-413A-959C-D01FB56883CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78F23225-6C41-413A-959C-D01FB56883CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78F23225-6C41-413A-959C-D01FB56883CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

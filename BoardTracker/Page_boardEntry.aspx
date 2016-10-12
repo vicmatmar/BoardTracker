@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Page_boardEntry.aspx.cs" Inherits="Page_boardEntry" %>
 
-<%@ Reference Page="~/Page_login.aspx" %>
+<%@ Reference VirtualPath="Page_login.aspx" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -10,16 +11,17 @@
 <body>
     <form id="Form_boardEntry" runat="server">
         <div>
-            <asp:Label runat="server" ID="Label_username" Text=""></asp:Label>
-        </div>
-        <div>
-            <asp:TextBox runat="server" ID="Textbox_serial" OnTextChanged="Textbox_serial_TextChanged"></asp:TextBox>
+            <asp:Label runat="server" ID="Label2" Text="Enter serial number"></asp:Label>
         </div>
         <div>
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
             <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
                 <ContentTemplate>
-                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                    <div>
+                        <asp:TextBox runat="server" ID="Textbox_serial" OnTextChanged="Textbox_serial_TextChanged"></asp:TextBox>
+                    </div>
+                    <asp:Label ID="Label_Msg" runat="server" Text="Label" Visible="False"></asp:Label>
+                    <asp:GridView ID="GridView1" runat="server" ShowHeader="True"></asp:GridView>
                 </ContentTemplate>
             </asp:UpdatePanel>
         </div>

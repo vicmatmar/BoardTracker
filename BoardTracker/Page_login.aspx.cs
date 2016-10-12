@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+using BoardSerialData;
+
 public partial class Page_login : System.Web.UI.Page
 {
     string _user_name;
@@ -18,7 +20,7 @@ public partial class Page_login : System.Web.UI.Page
 
     protected void DropDownList_userName_Load(object sender, EventArgs e)
     {
-        using (ManufacturingDataDataContext cx = new ManufacturingDataDataContext())
+        using (BoardSerial_DataContext cx = new BoardSerial_DataContext())
         {
             if (!IsPostBack)
             {
@@ -35,7 +37,7 @@ public partial class Page_login : System.Web.UI.Page
         string username = DropDownList_userName.Text;
         string pin_str = TextBox_pin.Text;
 
-        using (ManufacturingDataDataContext cx = new ManufacturingDataDataContext())
+        using (BoardSerial_DataContext cx = new BoardSerial_DataContext())
         {
             var q = cx.Testers.Where(d => d.Name == username && d.Pin == null);
             if (pin_str != "")
