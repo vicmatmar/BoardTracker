@@ -5,22 +5,30 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-using BoardSerialData;
+using System.Web.Configuration;
+
+using CentraliteDataUtils;
 
 public partial class Page_login : System.Web.UI.Page
 {
     string _user_name;
     public string UserName { get { return _user_name; } }
 
+
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (!IsPostBack)
+        {
+            DataUtils.DBConnStr = WebConfigurationManager.OpenWebConfiguration("~").ConnectionStrings.ConnectionStrings["ManufacturingStore_RADConnectionString"].ConnectionString;
+        }
+        //CentraliteDataUtils.DataUtils.DBConnStr = 
         if (Page.PreviousPage != null) { }
 
     }
 
     protected void DropDownList_userName_Load(object sender, EventArgs e)
     {
-        using (BoardSerial_DataContext cx = new BoardSerial_DataContext())
+        using (CentraliteDataContext cx = DataUtils.DataContext)
         {
             if (!IsPostBack)
             {
@@ -37,7 +45,7 @@ public partial class Page_login : System.Web.UI.Page
         string username = DropDownList_userName.Text;
         string pin_str = TextBox_pin.Text;
 
-        using (BoardSerial_DataContext cx = new BoardSerial_DataContext())
+        using (CentraliteDataContext cx = DataUtils.DataContext)
         {
             var q = cx.Testers.Where(d => d.Name == username && d.Pin == null);
             if (pin_str != "")

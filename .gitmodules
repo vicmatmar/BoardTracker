@@ -1,0 +1,7 @@
+[submodule "CentraliteDataUtils"]
+	path = CentraliteDataUtils
+	url = https://github.com/vicmatmar/CentraliteDataUtils
+	branch = RAD
+[submodule "BoardSerialNumber"]
+	path = BoardSerialNumber
+	url = https://github.com/vicmatmar/BoardSerialNumber

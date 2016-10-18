@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Page_boardEntry.aspx.cs" Inherits="Page_boardEntry" %>
 
-<%@ Reference VirtualPath="Page_login.aspx" %>
+<%@ Reference Page="~/Page_login.aspx" %>
 
 <!DOCTYPE html>
 

@@ -6,9 +6,14 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 using System.Data;
+
+using CentraliteDataUtils;
+
 public partial class Page_boardEntry : System.Web.UI.Page
 {
     static string _user_name;
+
+    //DataUtils.DBConnStr = "";
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -57,7 +62,7 @@ public partial class Page_boardEntry : System.Web.UI.Page
             r[1] = _user_name;
             t.Rows.Add(r);
 
-            BoardSerialData.BoardSerial_DataContext cx = new BoardSerialData.BoardSerial_DataContext();
+            CentraliteDataContext cx = DataUtils.DataContext;
             r = t.NewRow();
             r[0] = "Product";
             r[1] = String.Format(
@@ -77,7 +82,7 @@ public partial class Page_boardEntry : System.Web.UI.Page
 
             r = t.NewRow();
             r[0] = "Number";
-            r[1] = serial_parts.Serial_Number;
+            r[1] = serial_parts.Number;
             t.Rows.Add(r);
 
             Textbox_serial.Text = "";
