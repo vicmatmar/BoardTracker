@@ -13,12 +13,13 @@ public partial class Page_boardEntry : System.Web.UI.Page
 {
     static string _user_name;
 
-    //DataUtils.DBConnStr = "";
 
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
+            DataUtils.DBConnStr = "Data Source=rs01;Initial Catalog=ManufacturingStore_RAD;Integrated Security=True";
+
             // Check to see if it came from login page
             if (PreviousPage != null)
             {
@@ -86,6 +87,21 @@ public partial class Page_boardEntry : System.Web.UI.Page
             t.Rows.Add(r);
 
             Textbox_serial.Text = "";
+
+            using (CentraliteDataContext dc = DataUtils.DataContext)
+            {
+                IQueryable<BoardTracker> btracker =  dc.BoardTrackers.Where(c =>
+                c.ProductId == serial_parts.Product_ID &&
+                c.Week == serial_parts.Week_Year.Week &&
+                c.Year == serial_parts.Week_Year.Year &&
+                c.Number == serial_parts.Number
+                );
+
+                if(btracker.Any())
+                {
+                    int test = 1;
+                }
+            }
         }
         catch(Exception ex)
         {
@@ -95,10 +111,17 @@ public partial class Page_boardEntry : System.Web.UI.Page
         }
         finally
         {
+            /*
             GridView1.ShowHeader = false;
             GridView1.DataSource = t;
             GridView1.DataBind();
             GridView1.Visible = true;
+            */
+            GridView grid_parse_data = new GridView();
+            grid_parse_data.ShowHeader = false;
+            grid_parse_data.DataSource = t;
+            grid_parse_data.DataBind();
+            UpdatePanel1.ContentTemplateContainer.Controls.Add(grid_parse_data);
 
             Textbox_serial.Focus();
             UpdatePanel1.Update();

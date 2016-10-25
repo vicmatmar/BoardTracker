@@ -21,7 +21,6 @@
                         <asp:TextBox runat="server" ID="Textbox_serial" OnTextChanged="Textbox_serial_TextChanged"></asp:TextBox>
                     </div>
                     <asp:Label ID="Label_Msg" runat="server" Text="Label" Visible="False"></asp:Label>
-                    <asp:GridView ID="GridView1" runat="server" ShowHeader="True"></asp:GridView>
                 </ContentTemplate>
             </asp:UpdatePanel>
         </div>
